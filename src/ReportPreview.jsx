@@ -36,12 +36,14 @@ const reportPreview = ({
         <p>Follow up {followUp}</p>
         <p>Email sent {emailSent}</p>
         <p>Appointmens {appointments}</p>
-        <button className="reportButton" onClick={copyText}>
-          {buttonText}
-        </button>
-        <button className="reportButton" onClick={clearReport}>
-          Clear Report
-        </button>
+        <div className="reportButtonContainer">
+          <button className="reportButton" onClick={copyText}>
+            {buttonText}
+          </button>
+          <button className="reportButton" onClick={clearReport}>
+            Clear Report
+          </button>
+        </div>
       </div>
     </div>
   );
