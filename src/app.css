@@ -37,21 +37,37 @@
     font-size: 50px;
     font-weight: bold;
   }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+
   > button {
+    width: 120px;
     border: none;
     border-radius: 5px;
     background-color: rgb(0, 34, 138);
     color: #ff5900;
     font-weight: bold;
     padding: 10px 20px;
-    width: 90%;
     font-size: 20px;
-  }
+  } 
 
-  > button:active {
-    background-color: rgba(0, 34, 138, 0.9);
-  }
+  > button:disabled,
+    button[disabled] {
+      background-color: #838383;
+      color: #343434;
+    }
+  
+
+
 }
+
+/* .buttonContainer:active {
+  background-color: rgba(0, 34, 138, 0.9);
+} */
 
 .reportContainer {
   font-size: 20px;

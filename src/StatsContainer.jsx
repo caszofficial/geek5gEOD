@@ -55,27 +55,69 @@ const StatsContainer = () => {
         <div className="statContainer">
           <h1>Calls</h1>
           <p>{callsMade}</p>
-          <button onClick={() => setCallsMade(callsMade + 1)}>+1</button>
+          <div className="buttonContainer">
+            <button
+              onClick={() => setCallsMade(callsMade - 1)}
+              disabled={callsMade === 0}
+            >
+              -1
+            </button>
+            <button onClick={() => setCallsMade(callsMade + 1)}>+1</button>
+          </div>
         </div>
         <div className="statContainer">
           <h1>Answered</h1>
           <p>{answered}</p>
-          <button onClick={() => setAnswered(answered + 1)}>+1</button>
+          <div className="buttonContainer">
+            <button
+              onClick={() => setAnswered(answered - 1)}
+              disabled={answered === 0}
+            >
+              -1
+            </button>
+            <button onClick={() => setAnswered(answered + 1)}>+1</button>
+          </div>
         </div>
         <div className="statContainer">
           <h1>Follow up</h1>
           <p>{followUp}</p>
-          <button onClick={() => setFollowUp(followUp + 1)}>+1</button>
+          <div className="buttonContainer">
+            <button
+              onClick={() => setFollowUp(followUp - 1)}
+              disabled={followUp === 0}
+            >
+              -1
+            </button>
+            <button onClick={() => setFollowUp(followUp + 1)}>+1</button>
+          </div>
         </div>
         <div className="statContainer">
           <h1>Email sent</h1>
           <p>{emailSent}</p>
-          <button onClick={() => setEmailSent(emailSent + 1)}>+1</button>
+          <div className="buttonContainer">
+            <button
+              onClick={() => setEmailSent(emailSent - 1)}
+              disabled={emailSent === 0}
+            >
+              -1
+            </button>
+            <button onClick={() => setEmailSent(emailSent + 1)}>+1</button>
+          </div>
         </div>
         <div className="statContainer">
           <h1>Appoinments</h1>
           <p>{appointments}</p>
-          <button onClick={() => setAppointments(appointments + 1)}>+1</button>
+          <div className="buttonContainer">
+            <button
+              onClick={() => setAppointments(appointments - 1)}
+              disabled={appointments === 0}
+            >
+              -1
+            </button>
+            <button onClick={() => setAppointments(appointments + 1)}>
+              +1
+            </button>
+          </div>
         </div>
       </div>
       <ReportPreview
