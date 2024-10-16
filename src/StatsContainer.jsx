@@ -23,6 +23,10 @@ const StatsContainer = () => {
     const data = localStorage.getItem("report");
     return data ? JSON.parse(data).appointments : 0;
   });
+  const [outOfService, setOutOfService] = useState(()=>{
+    const data = localStorage.getItem("report");
+    return data ? JSON.parse(data).outOfService : 0
+  })
 
   useEffect(() => {
     localStorage.setItem(
@@ -33,6 +37,7 @@ const StatsContainer = () => {
         followUp: followUp,
         emailSent: emailSent,
         appointments: appointments,
+        outOfService: outOfService
       })
     );
   }, [callsMade, answered, followUp, emailSent, appointments]);
@@ -46,6 +51,7 @@ const StatsContainer = () => {
       setFollowUp(parsedData.followUp || 0);
       setEmailSent(parsedData.emailSent || 0);
       setAppointments(parsedData.appointments || 0);
+      setOutOfService(parsedData.outOfService || 0);
     }
   }, []);
 
@@ -119,6 +125,21 @@ const StatsContainer = () => {
             </button>
           </div>
         </div>
+        <div className="statContainer">
+          <h1>Out Of Service</h1>
+          <p>{outOfService}</p>
+          <div className="buttonContainer">
+            <button
+              onClick={() => setOutOfService(outOfService - 1)}
+              disabled={outOfService === 0}
+            >
+              -1
+            </button>
+            <button onClick={() => setOutOfService(outOfService + 1)}>
+              +1
+            </button>
+          </div>
+        </div>
       </div>
       <ReportPreview
         calls={callsMade}
@@ -126,6 +147,7 @@ const StatsContainer = () => {
         followUp={followUp}
         emailSent={emailSent}
         appointments={appointments}
+        outOfService={outOfService}
       />
     </div>
   );

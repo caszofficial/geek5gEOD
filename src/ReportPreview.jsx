@@ -7,6 +7,7 @@ const reportPreview = ({
   followUp,
   emailSent,
   appointments,
+  outOfService
 }) => {
   const [buttonText, setButtonText] = useState("Copy");
   const copyText = () => {
@@ -36,6 +37,7 @@ const reportPreview = ({
         <p>Follow up {followUp}</p>
         <p>Email sent {emailSent}</p>
         <p>Appointmens {appointments}</p>
+        <p>Out Of Service {outOfService}</p>
         <div className="reportButtonContainer">
           <button className="reportButton" onClick={copyText}>
             {buttonText}
